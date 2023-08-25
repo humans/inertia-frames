@@ -14,6 +14,7 @@ let status = ref("processing");
 onMounted(() => {
     pages[`${page.path}.vue`]().then((module) => {
         component.value = module.default;
+
         status.value = "rendered";
     });
 });
@@ -26,12 +27,12 @@ onMounted(() => {
         <div v-if="status === 'failed'">Could not render page</div>
 
         <Component
+            v-if="status === 'rendered'"
             :is="component"
             v-bind="{
                 ...page.properties,
                 frame,
             }"
-            v-if="status === 'rendered'"
         />
     </div>
 </template>

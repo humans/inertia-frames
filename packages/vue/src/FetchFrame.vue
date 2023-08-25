@@ -28,10 +28,12 @@ onMounted(async () => {
 
 <template>
     <div>
-        <div v-if="status === 'processing'">Processing</div>
+        <div v-if="status === 'processing'">
+          <slot name="processing"></slot>
+        </div>
 
         <div v-if="status === 'failed'">
-            Could not fetch the frame. Make sure to use `inertia()->frame()`
+          <slot name="failed"></slot>
         </div>
 
         <RenderFrame v-if="status === 'loaded'" :page="page" />
