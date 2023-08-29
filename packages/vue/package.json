@@ -1,7 +1,8 @@
 {
     "name": "@humansph/inertia-frames-vue",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "main": "src/index.js",
+    "type": "module",
     "dependencies": {
         "pinia": "^2.1.6",
         "vue": "^3.3.4"
