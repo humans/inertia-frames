@@ -15,6 +15,7 @@ provide("inertia-frames-vue::pages", pages);
 <template>
     <div>
         <Component v-for="frame in store.frames" :is="frame.component" :frame="frame">
+            <Teleport :to="frame.target ?? 'body'">
                 <FetchFrame :frame="frame">
                     <template #processing>
                         <slot name="processing"></slot>
@@ -24,6 +25,7 @@ provide("inertia-frames-vue::pages", pages);
                         <slot name="failed"></slot>
                     </template>
                 </FetchFrame>
+            </Teleport>
         </Component>
     </div>
 </template>
