@@ -15,7 +15,7 @@ export const useFramesStore = defineStore("inertia-frames", () => {
     }
 
     function open (frame) {
-        const transition = frame?.transition || 300
+        const transition = frame?.transition || 0
 
         let $$id = Symbol()
 
