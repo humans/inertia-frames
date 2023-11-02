@@ -22,9 +22,13 @@ onMounted(() => {
 
 <template>
     <div>
-        <div v-if="status === 'processing'">Processing</div>
+        <div v-if="status === 'processing'">
+            <!-- Processing -->
+        </div>
 
-        <div v-if="status === 'failed'">Could not render page</div>
+        <div v-if="status === 'failed'">
+            <!-- Could not render page -->
+        </div>
 
         <Component
             v-if="status === 'rendered'"
